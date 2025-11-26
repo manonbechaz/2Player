@@ -749,5 +749,10 @@ a:focus {
   }
 }
 
+.three-images img {
+  height: 150px;
+  object-fit: cover;
+}
+
 
 
