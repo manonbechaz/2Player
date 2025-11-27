@@ -871,3 +871,16 @@ a:focus {
   color: var(--primary-hover);   /* Hover effect */
   text-decoration: none;         /* Optional */
 }
+
+.results-text {
+  padding-bottom: 0rem;  /* reduce bottom padding */
+}
+
+.carousel-section {
+  padding-top: 0rem;     /* reduce top padding */
+}
+
+/* Optional: reduce paragraph spacing if needed */
+.results-text .content p {
+  margin-bottom: 0.5rem;
+}

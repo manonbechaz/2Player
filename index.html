@@ -401,7 +401,7 @@
 
 <!-- Methodology -->
 
-<!-- Paper abstract -->
+<!-- Dataset -->
 <section class="section hero is-light">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
@@ -432,14 +432,36 @@ mislabeled or noisy examples which hinder the learning process.
   </div>
 </section>
 
+<!-- Results -->
+<section class="hero is-small">
+  <div class="hero-body results-text">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Results</h2>
+        <h3 class="subtitle is-4 mt-3">1. Change Detection Results</h3>
+        <div class="content has-text-justified">
+          <!-- TODO: Replace with your paper abstract -->
+          <p>
+            We benchmark 2Player against a wide range of classical and state-of-the-art unsupervised methods, 
+            showing it produces cleaner, more reliable change maps with fewer false positives and better handling 
+            of irrelevant variations like seasonal or illumination changes.<p>
+
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+</section>
+
 
 <!-- Image carousel -->
 <section class="hero is-small">
-  <div class="hero-body">
+  <div class="hero-body carousel-section">
     <div class="container">
       <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-      <h2 class="title is-3">Results</h2>
       <div id="results-carousel" class="carousel results-carousel">
        <div class="item">
         <!-- TODO: Replace with your research result images -->
@@ -476,29 +498,33 @@ mislabeled or noisy examples which hinder the learning process.
 </section>
 <!-- End image carousel -->
 
-
-
-
-<!-- Youtube video -->
-<section class="hero is-small is-light">
-  <div class="hero-body">
-    <div class="container">
-      <!-- Paper video. -->
-      <h2 class="title is-3">Video Presentation</h2>
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
-          
-          <div class="publication-video">
-            <!-- TODO: Replace with your YouTube video ID -->
-            <iframe src="https://www.youtube.com/embed/JkaxUblCGz0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-          </div>
+<section class="hero is-small">
+  <div class="hero-body results-text">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h3 class="subtitle is-4 mt-3">2. Reconstruction Results</h3>
+        <div class="content has-text-justified">
+          <!-- TODO: Replace with your paper abstract -->
+          <p>
+            Player 2 produces visually convincing reconstructions of unchanged regions, and the reconstruction error maps
+            highlight actual changes, demonstrating the effectiveness of the cooperative framework.
+            When guided by masking from Player 1, reconstruction errors in changed areas are substantially reduced, 
+            showing that the cooperative interaction between the two models effectively isolates true structural changes.
+          </p>
         </div>
+        <figure class="image mod-figure">
+              <img src="static/images/pruning_barplot_both_datasets.png" alt="Modalities overview" width="110%">
+              <figcaption class="has-text-centered is-size-9 mt-2">
+    Pruning strategy significantly improves dataset quality across HRSCD and ValaisCD: Removing training samples improves performance, confirming that we are removing low-quality, i.e.
+mislabeled or noisy examples which hinder the learning process.
+  </figcaption>
+            </figure>
       </div>
     </div>
   </div>
+  </div>
 </section>
-<!-- End youtube video -->
-
 
 
 <!--BibTex citation -->
@@ -531,7 +557,7 @@ mislabeled or noisy examples which hinder the learning process.
 
           <p>
             This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
-            You are free to borrow the source code of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+            <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
             Commons Attribution-ShareAlike 4.0 International License</a>.
           </p>
 
