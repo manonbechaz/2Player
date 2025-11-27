@@ -56,6 +56,19 @@ body {
   box-shadow: var(--shadow-md);
 }
 
+.button.is-grey {
+  background: var(--background-secondary) !important;
+  border: 1px solid #e7e9ebe9 !important;
+  color: var(--text-secondary) !important;
+  /*box-shadow: var(--shadow-md);*/
+}
+.button.is-grey-dark {
+  background: #ecf0f4e9 !important;
+  border: 1px solid #d1d3d4e9 !important;
+  color: var(--text-secondary) !important;
+  /*box-shadow: var(--shadow-md);*/
+}
+
 .button.is-dark:hover {
   transform: translateY(-2px);
   box-shadow: var(--shadow-lg);
@@ -109,14 +122,14 @@ body {
 }
 
 .teaser {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Google Sans', sans-serif;
 }
 
 
 /* Publication Content Styling */
 .publication-title {
-    font-family: 'Inter', sans-serif !important;
-    font-weight: 800 !important;
+    font-family: 'Google Sans', sans-serif !important;
+    font-weight: 600 !important;
     color: var(--text-primary) !important;
     margin-bottom: 2rem !important;
     line-height: 1.1 !important;
@@ -146,7 +159,7 @@ body {
 }
 
 .publication-authors {
-    font-family: 'Inter', sans-serif !important;
+    font-family: 'Google Sans', sans-serif !important;
     font-weight: 500;
     margin-bottom: 1.5rem;
 }
@@ -310,7 +323,7 @@ body {
 
 /* Section Titles */
 .title.is-3 {
-  font-family: 'Inter', sans-serif !important;
+  font-family: 'Google Sans', sans-serif !important;
   font-weight: 700 !important;
   color: var(--text-primary);
   margin-bottom: 2rem !important;
@@ -749,10 +762,112 @@ a:focus {
   }
 }
 
-.three-images img {
-  height: 150px;
-  object-fit: cover;
+.three-images img.img-fixed {
+  height: 150px;        /* Same height for all images */
+  width: auto;          /* Width adjusts automatically */
+  object-fit: cover;    /* Keeps aspect ratio while filling the height */
+  display: inline-block;
+}
+
+.three-images {
+  display: flex;
+  justify-content: center;   /* center them horizontally */
+  align-items: flex-end;       /* align vertically */
+  gap: 20px;                 /* space between images */
+}
+
+.img-h1 {
+  height: 40px;
+  width: auto;
+  object-fit: contain;
+}
+
+.img-h2 {
+  height: 60px;
+  width: auto;
+  object-fit: contain;
+}
+
+.img-h3 {
+  height: 50px;
+  width: auto;
+  object-fit: contain;
+}
+
+/* Methods */
+
+.methodology-figure {
+  position: relative;
+  max-width: 100%;
+}
+
+.overlay {
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  background: rgba(255,255,255,0.8);
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  display: none;
+}
+
+.overlay.active {
+  display: block;
+}
+
+.step-btn {
+  margin-right: 0.5rem;
+  cursor: pointer;
+  background: var(--background-accent);
+  border: 1px solid var(--border-color);
+  padding: 0.5rem 1rem;
+  border-radius: var(--border-radius);
+  width: 100%;
+  background-color: var(--border-color);   /* light blue */
+  color: var(--text-secondary);              /* text color */
+  border-color: transparent;
+  margin-bottom: 0.5rem;
+}
+
+.step-btn.active {
+  background: var(--primary-color);
+  color: white;
+  background-color: #485fc7;
+}
+
+.methodology {
+  padding-top: 2rem;   /* Same as hero-body default */
 }
 
 
+.methodology .columns {
+  align-items: stretch !important; /* makes both columns equal height */
+}
 
+.methodology-sidebar {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.step-buttons-container {
+  flex-shrink: 0;    /* prevents buttons from being pushed by text */
+}
+
+#step-description {
+  flex-grow: 1;      /* expands downward */
+  overflow-y: auto;  /* optional: keeps long text scrollable */
+  font-size: 1rem;   /* default is ~1.1rem from your global styles */
+  line-height: 1.5;    /* optional: reduce spacing */
+}
+
+.content.has-text-justified a {
+  color: var(--primary-color);   /* Your theme color */
+  text-decoration: underline;    /* Optional */
+  cursor: pointer;               /* Ensures it’s clickable */
+}
+
+.content.has-text-justified a:hover {
+  color: var(--primary-hover);   /* Hover effect */
+  text-decoration: none;         /* Optional */
+}

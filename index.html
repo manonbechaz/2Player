@@ -100,7 +100,8 @@
   
   <!-- Fonts - Optimized loading -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
   <!-- Defer non-critical JavaScript -->
   <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script defer src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
@@ -237,23 +238,22 @@
                   </div>
 
                   <div class="is-size-5 publication-authors">
-                    <!-- TODO: Replace with your institution and conference/journal info -->
-                    <span class="author-block">ISPRS Journal of Photogrammetry and Remote Sensing</span>
-                    <!-- TODO: Remove this line if no equal contribution -->
-                     <span class="eql-cntrb"><small><br><sup>1</sup>ECEO Laboratory, EPFL, Switzerland</small></span>
-                     <span class="eql-cntrb"><small><br><sup>2</sup> AXA GDAI Research, Switzerland</small></span>
-                  </div>
+                  <span class="author-block is-block">ISPRS Journal of Photogrammetry and Remote Sensing</span>
 
-                  <div class="columns three-images is-centered mt-5">
-  <div class="column is-one-third has-text-centered">
-    <img src="static/images/EPFL_Logo_184X53.svg">
-  </div>
-  <div class="column is-one-third has-text-centered">
-    <img src="static/images/ECEO.png">
-  </div>
-  <div class="column is-one-third has-text-centered">
-    <img src="static/images/AXA.png">
-  </div>
+                  <span class="author-block is-block">
+                    <small><sup>1</sup>ECEO Laboratory, EPFL, Switzerland</small>
+                  </span>
+
+                  <span class="author-block is-block">
+                    <small><sup>2</sup>AXA GDAI Research, Switzerland</small>
+                  </span>
+                </div>
+
+            
+  <div class="three-images">
+  <img src="static/images/EPFL_Logo_184X53.svg" class="img-h1">
+  <img src="static/images/ECEO.png" class="img-h2">
+  <img src="static/images/AXA.png"class="img-h3">
 </div>
 
 
@@ -288,14 +288,14 @@
                   <a href="https://arxiv.org/abs/<ARXIV PAPER ID>" target="_blank"
                   class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
-                    <i class="fa-regular fa-image"></i>
+                    <img src="https://huggingface.co/front/assets/huggingface_logo-noborder.svg" alt="Hugging Face" width="20" height="20">
                   </span>
                   <span>Clean HRSCD</span>
                   <span class="link-block">
                   <a href="https://arxiv.org/abs/<ARXIV PAPER ID>" target="_blank"
                   class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
-                    <i class="fa-regular fa-image"></i>
+                    <img src="https://huggingface.co/front/assets/huggingface_logo-noborder.svg" alt="Hugging Face" width="20" height="20">
                   </span>
                   <span>ValaisCD</span>
                 </a>
@@ -314,11 +314,27 @@
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">Abstract</h2>
+        <h2 class="title is-3">What if we could turn 
+          <span style="font-style: italic;">any</span>
+                   change detection architecture into an 
+                   unsupervised model
+?</h2>
         <div class="content has-text-justified">
           <!-- TODO: Replace with your paper abstract -->
           <p>
-            2Player is (...) Abstract
+            Nowadays, Change Detection delivers strong performance, but still relies on huge labeled datasets. 
+            And without labels, unsupervised methods fall behind, often because they do not take advantage of the expressive architectures used in supervised models.
+            </p>
+            <p>
+            <b> But what if it did not have to be this way?
+            2Player bridges the gap by transforming any CD model into an unsupervised one</b>.</p>
+          
+            By letting a change detector and a reconstruction network guide each other in a self-supervised loop, with an additional Geographical Correspondence Module providing structural cues, 2Player achieves high-quality change detection
+            without labels, combining the best of both worlds: supervised capacity and unsupervised scalability.
+
+            Tested on four high-resolution datasets, including a new cleaned-up version of HRSCD and our new ValaisCD, 
+            2Player achieves state-of-the-art results for label-free change detection.
+
           </p>
         </div>
       </div>
@@ -328,38 +344,130 @@
 <!-- End paper abstract -->
 
 
+<section class="methodology">
+  <div class="container">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Methodology at a glance</h2>
+        <div class="content has-text-justified">
+          
+         <div class="columns is-vcentered">
+
+    <!-- LEFT: Image that changes -->
+    <div class="column is-8">
+      <figure class="image">
+        <img id="method-img" src="static/images/2Players_schema.svg" alt="Method step">
+      </figure>
+    </div>
+
+    <!-- RIGHT: Buttons + Text -->
+    <div class="column is-4 methodology-sidebar">
+
+      <div class="step-buttons-container">
+        <button class="button is-normal is-rounded is-grey-dark step-btn active" data-step="0">
+        Overview
+      </button>
+        <button class="button is-normal is-rounded is-grey step-btn" data-step="1">
+          Step 1 — Change Detector
+        </button>
+        <button class="button is-normal is-rounded is-grey step-btn" data-step="2">
+          Step 2 — Reconstruction 
+        </button>
+        <button class="button is-normal is-rounded is-grey step-btn" data-step="3">
+          Step 3 — Masking and Cooperation
+        </button>
+         <button class="button is-normal is-rounded is-grey step-btn" data-step="4">
+          Step 4 — GCM
+        </button>
+      </div>
+
+      <div id="step-description" class="content mt-4">
+    <!-- Default overview text (visible on load) -->
+    <p>
+      <strong>Overview:</strong><br> 2Player is a cooperative self-supervised framework built around two interacting models. 
+        A change detector proposes potential change maps, while a recon- struction network predicts 
+        how the scene should look if no change happened. Through an iterative feedback loop, the two models 
+        refine each other, enabling reliable change detection without labeled data.
+    </p>
+  </div>
+
+    </div>
+  </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Methodology -->
+
+<!-- Paper abstract -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Datasets and Filtering Method</h2>
+        <div class="content has-text-justified">
+          <!-- TODO: Replace with your paper abstract -->
+          <p>
+            Many popular change-detection datasets, like  <a href="https://rcdaudt.github.io/hrscd/">HRSCD</a> and our newly introduced ValaisCD, suffer from coarse or inconsistent labels, 
+            often caused by automatic annotation errors from outdated vector maps. To ensure reliable evaluation, 
+            we introduce a simple but effective filtering strategy: we train a standard CD model on a small subset, 
+            use it to spot mislabeled or noisy samples, and discard those that consistently produce false positives or false negatives. 
+            This pruning significantly boosts data quality without sacrificing diversity, yielding refined versions of HRSCD and ValaisCD. We also test our method on two additional benchmarks, <a href="https://justchenhao.github.io/LEVIR/">LEVIR-CD</a> and <a href="https://gpcv.whu.edu.cn/data/building_dataset.html">WHU-CD</a>. 
+            These datasets provide a solid foundation for evaluating 2Player under fair, label-reliable conditions. </p>
+            <p>
+
+          </p>
+        </div>
+        <figure class="image mod-figure">
+              <img src="static/images/pruning_barplot_both_datasets.png" alt="Modalities overview" width="110%">
+              <figcaption class="has-text-centered is-size-9 mt-2">
+    Pruning strategy significantly improves dataset quality across HRSCD and ValaisCD: Removing training samples improves performance, confirming that we are removing low-quality, i.e.
+mislabeled or noisy examples which hinder the learning process.
+  </figcaption>
+            </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+
 <!-- Image carousel -->
 <section class="hero is-small">
   <div class="hero-body">
     <div class="container">
+      <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+      <h2 class="title is-3">Results</h2>
       <div id="results-carousel" class="carousel results-carousel">
        <div class="item">
         <!-- TODO: Replace with your research result images -->
-        <img src="static/images/carousel1.jpg" alt="First research result visualization" loading="lazy"/>
+        <img src="static/images/examples_HRSCD.png" alt="First research result visualization" loading="lazy"/>
         <!-- TODO: Replace with description of this result -->
         <h2 class="subtitle has-text-centered">
-          First image description.
+          Qualitative change detection results on the HRSCD dataset.
         </h2>
       </div>
       <div class="item">
         <!-- Your image here -->
-        <img src="static/images/carousel2.jpg" alt="Second research result visualization" loading="lazy"/>
+        <img src="static/images/examples_ValaisCd.png" alt="Second research result visualization" loading="lazy"/>
         <h2 class="subtitle has-text-centered">
-          Second image description.
+          Qualitative change detection results on the ValaisCD dataset.
         </h2>
       </div>
       <div class="item">
         <!-- Your image here -->
-        <img src="static/images/carousel3.jpg" alt="Third research result visualization" loading="lazy"/>
+        <img src="static/images/examples_LEVIR.png" alt="Third research result visualization" loading="lazy"/>
         <h2 class="subtitle has-text-centered">
-         Third image description.
+         Qualitative change detection results on the LEVIR-CD dataset.
        </h2>
      </div>
      <div class="item">
       <!-- Your image here -->
-      <img src="static/images/carousel4.jpg" alt="Fourth research result visualization" loading="lazy"/>
+      <img src="static/images/examples_WHUCD.png" alt="Fourth research result visualization" loading="lazy"/>
       <h2 class="subtitle has-text-centered">
-        Fourth image description.
+        Qualitative change detection results on the WHU-CD dataset.
       </h2>
     </div>
   </div>
