@@ -220,11 +220,12 @@
         <div class="columns is-centered">
           <div class="column has-text-centered">
             <!-- TODO: Replace with your paper title -->
-            <h1 class="title is-1 publication-title">2Player: A General Framework for Self-Supervised Change Detection via Cooperative Learning</h1>
+            <h1 class="title is-1 publication-title">
+              2Player: A General Framework for Self-Supervised Change Detection via Cooperative Learning</h1>
             <div class="is-size-5 publication-authors">
               <!-- TODO: Replace with your paper authors and their personal links -->
               <span class="author-block">
-                <a href="https://manonbechaz.github.io/" target="_blank">Manon Béchaz</a><sup>1</sup>,</span>
+                <a href="https://people.epfl.ch/manon.bechaz" target="_blank">Manon Béchaz</a><sup>1</sup>,</span>
                 <span class="author-block">
                   <a href="https://emanueledalsasso.github.io/" target="_blank">Emanuele Dalsasso</a><sup>1</sup>,</span>
                   <span class="author-block">
@@ -509,20 +510,124 @@ mislabeled or noisy examples which hinder the learning process.
           <p>
             Player 2 produces visually convincing reconstructions of unchanged regions, and the reconstruction error maps
             highlight actual changes, demonstrating the effectiveness of the cooperative framework.
-            When guided by masking from Player 1, reconstruction errors in changed areas are substantially reduced, 
-            showing that the cooperative interaction between the two models effectively isolates true structural changes.
           </p>
         </div>
         <figure class="image mod-figure">
-              <img src="static/images/pruning_barplot_both_datasets.png" alt="Modalities overview" width="110%">
-              <figcaption class="has-text-centered is-size-9 mt-2">
-    Pruning strategy significantly improves dataset quality across HRSCD and ValaisCD: Removing training samples improves performance, confirming that we are removing low-quality, i.e.
-mislabeled or noisy examples which hinder the learning process.
-  </figcaption>
+              <img src="static/images/reconstruction_error_HRSCD.png" alt="Modalities overview" width="110%">
+            </figure>
+            <figure class="image mod-figure">
+              <img src="static/images/reconstruction_error_ValaisCD.png" alt="Modalities overview" width="110%">
             </figure>
       </div>
     </div>
   </div>
+  </div>
+</section>
+
+<section class="hero is-small">
+  <div class="hero-body results-text">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h3 class="subtitle is-4 mt-3">3. Two signals, one goal: learning complementary guidance
+</h3>
+        <div class="content has-text-justified">
+          <!-- TODO: Replace with your paper abstract -->
+          <p>
+            In 2Player, the change detection model, Player 1, is supervised by two complementary signals: the reconstruction error from Player 2 and the structural dissimilarity map from the Geographical Correspondence Module.
+            The carousel below illustrates their complementarity. The reconstruction error highlights all deviations from expected
+            appearance, including both true changes and irrelevant variations like seasonal shifts. 
+            The dissimilarity map, in contrast, focuses on structural transformations, suppressing false positives caused by appearance-only changes. In some cases, only one of the two signals correctly identifies a change,
+            showing their complementarity.
+          </p>
+        </div>
+    </div>
+  </div>
+  </div>
+</section>
+
+<!-- Image carousel -->
+<section class="hero is-small">
+  <div class="hero-body carousel-section">
+    <div class="container">
+      <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+      <div id="results-carousel" class="carousel results-carousel">
+       <div class="item">
+        <!-- TODO: Replace with your research result images -->
+        <img src="static/images/example_difference_reconstruction_dissimilarity.png" alt="First research result visualization" loading="lazy"/>
+        <!-- TODO: Replace with description of this result -->
+        <h2 class="subtitle has-text-centered">
+          In this first example, both the reconstruction error and the dissimilarity map from the GCM correctly highlight the true structural change.
+        </h2>
+      </div>
+      <div class="item">
+        <!-- Your image here -->
+        <img src="static/images/example_difference_reconstruction_dissimilarity5.png" alt="Second research result visualization" loading="lazy"/>
+        <h2 class="subtitle has-text-centered">
+          In the second example, we however observe a high reconstruction error in the fields due to seasonal variation that does not correspond to a true structural change. 
+          In that case, the low structural dissimilarity prevents false detection.
+        </h2>
+      </div>
+      <div class="item">
+        <!-- Your image here -->
+        <img src="static/images/example_difference_reconstruction_dissimilarity6.png" alt="Third research result visualization" loading="lazy"/>
+        <h2 class="subtitle has-text-centered">
+        In this last example the opposite is observed: the large structural transformation leads to a high reconstruction error, while the dissimilarity fails
+        to fully capture the change.
+       </h2>
+     </div>
+    </div>
+  </div>
+</div>
+</div>
+</section>
+<!-- End image carousel -->
+
+<section class="hero is-small">
+  <div class="hero-body results-text">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h3 class="subtitle is-4 mt-3">4. Can it really be adapted to any change detection architecture?
+</h3>
+        <div class="content has-text-justified">
+          <!-- TODO: Replace with your paper abstract -->
+          <p>
+            A key objective of this work is to demonstrate that the 2Player framework is not tied to a specific change detection backbone. 
+            To verify this, we instantiated Player 1 using three widely adopted architectures: FC-Siam-Diff, SNUNet, and BIT.
+            As shown in our results, 2Player integrates smoothly with all architectures and consistently delivers competitive performance.
+            These findings confirm that 2Player is a flexible and architecture-agnostic framework, capable of turning a broad range of change detection models into unsupervised methods.
+          </p>
+        </div>
+        <figure class="image mod-figure">
+              <img src="static/images/different_backbones.png" alt="Modalities overview" width="110%">
+              <figcaption class="has-text-centered is-size-9 mt-2">
+  </figcaption>
+            </figure>
+    </div>
+  </div>
+  </div>
+</section>
+
+<!-- Takeaways -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Takeaways</h2>
+        <div class="content has-text-justified">
+          <!-- TODO: Replace with your paper abstract -->
+          <ul>
+            <li> <b>Cooperative learning between two models:</b> 2Player couples a change detection model with a reconstruction-based model, enabling each to guide the other through a self-supervised training loop.</li>
+            <li><b>Architecture-agnostic design:</b> The framework can transform any existing change detection architecture into an unsupervised model, preserving its expressive capacity without requiring labels.</li>
+            <li><b>Dual complementary supervision:</b> Reconstruction errors and dissimilarity maps provide two distinct but complementary supervision signals that jointly drive self-supervised learning.</li>
+            <li><b>Focus on structural change:</b> By leveraging structural dissimilarity maps, 2Player becomes robust to irrelevant variations such as seasonal or illumination changes and concentrates on true structural transformations.</li>
+            <li><b>State-of-the-art performance:</b> Across four high-resolution datasets, 2Player achieves state-of-the-art results among unsupervised methods.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -532,10 +637,6 @@ mislabeled or noisy examples which hinder the learning process.
     <div class="container is-max-desktop content">
       <div class="bibtex-header">
         <h2 class="title">BibTeX</h2>
-        <button class="copy-bibtex-btn" onclick="copyBibTeX()" title="Copy BibTeX to clipboard">
-          <i class="fas fa-copy"></i>
-          <span class="copy-text">Copy</span>
-        </button>
       </div>
       <pre id="bibtex-code"><code>@article{YourPaperKey2024,
   title={Your Paper Title Here},
@@ -543,6 +644,15 @@ mislabeled or noisy examples which hinder the learning process.
   journal={Conference/Journal Name},
   year={2024},
   url={https://your-domain.com/your-project-page}
+}</code></pre>
+<pre id="bibtex-code"><code>@inproceedings{bechaz2025self,
+  title={Self-supervised Change Detection via Cooperative Learning: A Two-Player Model},
+  author={B{\'e}chaz, Manon and Dalsasso, Emanuele and Tomoiag{\u{a}}, Ciprian and Detyniecki, Marcin and Tuia, Devis},
+  booktitle={2025 Joint Urban Remote Sensing Event (JURSE)},
+  pages={1--4},
+  year={2025},
+  organization={IEEE},
+  doi={10.1109/JURSE60372.2025.11076078}
 }</code></pre>
     </div>
 </section>

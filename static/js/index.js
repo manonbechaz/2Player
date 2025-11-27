@@ -126,8 +126,8 @@ $(document).ready(function() {
 		slidesToScroll: 1,
 		slidesToShow: 1,
 		loop: true,
-		infinite: true,
-		autoplay: true,
+		infinite: false,
+		autoplay: false,
 		autoplaySpeed: 5000,
     }
 
