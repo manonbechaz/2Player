@@ -8,7 +8,7 @@
   <!-- TODO: Replace with your paper title and author names -->
   <meta name="title" content="2Player: A General Framework for Self-Supervised Change Detection via Cooperative Learning">
   <!-- TODO: Write a compelling 150-160 character description of your research -->
-  <meta name="description" content="BRIEF_DESCRIPTION_OF_YOUR_RESEARCH_CONTRIBUTION_AND_FINDINGS">
+  <meta name="description" content="2Player is a self-supervised change detection approach that allows to turn any existing change detection architecture into an unsupervised one.">
   <!-- TODO: Add 5-10 relevant keywords for your research area -->
   <meta name="keywords" content="Change Detection, Remote Sensing, Cooperative Learning, Very High Resolution Imagery, Self-Supervised Learning">
   <!-- TODO: List all authors -->
@@ -23,40 +23,29 @@
   <!-- TODO: Same as paper title above -->
   <meta property="og:title" content="2Player: A General Framework for Self-Supervised Change Detection via Cooperative Learning">
   <!-- TODO: Same as description above -->
-  <meta property="og:description" content="BRIEF_DESCRIPTION_OF_YOUR_RESEARCH_CONTRIBUTION_AND_FINDINGS">
+  <meta property="og:description" content="2Player is a self-supervised change detection approach that allows to turn any existing change detection architecture into an unsupervised one.">
   <!-- TODO: Replace with your actual website URL -->
   <meta property="og:url" content="https://manonbechaz.github.io/2Player/">
   <!-- TODO: Create a 1200x630px preview image and update path -->
-  <meta property="og:image" content="https://YOUR_DOMAIN.com/static/images/social_preview.png">
+  <meta property="og:image" content="https://manonbechaz.github.io/2Player/static/images/2Players_schema.svg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="PAPER_TITLE - Research Preview">
-  <meta property="article:published_time" content="2024-01-01T00:00:00.000Z">
-  <meta property="article:author" content="FIRST_AUTHOR_NAME">
+  <meta property="og:image:alt" content="2Player: A General Framework for Self-Supervised Change Detection via Cooperative Learning">
+  <meta property="article:published_time" content="2025-12-01T00:00:00.000Z">
+  <meta property="article:author" content="Manon BECHAZ">
   <meta property="article:section" content="Research">
-  <meta property="article:tag" content="KEYWORD1">
-  <meta property="article:tag" content="KEYWORD2">
-
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image">
-  <!-- TODO: Replace with your lab/institution Twitter handle -->
-  <meta name="twitter:site" content="@YOUR_TWITTER_HANDLE">
-  <!-- TODO: Replace with first author's Twitter handle -->
-  <meta name="twitter:creator" content="@AUTHOR_TWITTER_HANDLE">
-  <!-- TODO: Same as paper title above -->
-  <meta name="twitter:title" content="PAPER_TITLE">
-  <!-- TODO: Same as description above -->
-  <meta name="twitter:description" content="BRIEF_DESCRIPTION_OF_YOUR_RESEARCH_CONTRIBUTION_AND_FINDINGS">
-  <!-- TODO: Same as social preview image above -->
-  <meta name="twitter:image" content="https://YOUR_DOMAIN.com/static/images/social_preview.png">
-  <meta name="twitter:image:alt" content="PAPER_TITLE - Research Preview">
+  <meta property="article:tag" content="Self-supervised Change Detection">
+  <meta property="article:tag" content="2Player">
 
   <!-- Academic/Research Specific -->
-  <meta name="citation_title" content="PAPER_TITLE">
-  <meta name="citation_author" content="FIRST_AUTHOR_LAST, FIRST_AUTHOR_FIRST">
-  <meta name="citation_author" content="SECOND_AUTHOR_LAST, SECOND_AUTHOR_FIRST">
-  <meta name="citation_publication_date" content="2024">
-  <meta name="citation_conference_title" content="CONFERENCE_NAME">
+  <meta name="citation_title" content="2Player: A General Framework for Self-Supervised Change Detection via Cooperative Learning">
+  <meta name="citation_author" content="Béchaz, Manon">
+  <meta name="citation_author" content="Dalsasso, Emanuele">
+    <meta name="citation_author" content="Tomoiagǎ, Ciprian">
+  <meta name="citation_author" content="Detyniecki, Marcin">
+  <meta name="citation_author" content="Tuia, Devis">
+  <meta name="citation_publication_date" content="2025">
+  <meta name="citation_conference_title" content="ISPRS Journal of Photogrammetry and Remote Sensing">
   <meta name="citation_pdf_url" content="https://YOUR_DOMAIN.com/static/pdfs/paper.pdf">
   
   <!-- Additional SEO -->
@@ -165,24 +154,28 @@
       "name": "ISPRS Journal of Photogrammetry and Remote Sensing"
     },
     "url": "https://manonbechaz.github.io/2Player/",
-    "image": "https://YOUR_DOMAIN.com/static/images/social_preview.png",
+    "image": "https://manonbechaz.github.io/2Player/static/images/2Players_schema.svg",
     "keywords": ["Change Detection", "Remote Sensing", "Cooperative Learning", "Very High Resolution Imagery", "Self-Supervised Learning"],
-    "abstract": "",
+    "abstract": "While recent progress in deep learning have improved change detection (CD) in remote sensing, achieving high performance without labeled data remains an open challenge. Current models remain strongly reliant on large-scale annotated datasets, limiting their scalability to new regions and applications. Unsupervised CD methods offer a promising alternative but often suffer from limited representational ability and vulnerability to irrelevant changes in appearance such as seasonal variations. In this work, we propose the 2Player framework, a novel self-supervised method that transforms any existing CD architecture into an unsupervised model by leveraging a cooperation between a change detector and a reconstruction-based model. The two models, or players, guide each other during training: reconstruction errors provide supervision to the change detector, while change predictions guide the reconstruction process.  To further improve robustness, we introduce a Geographical Correspondence Module that provides high-frequency structural information, effectively reducing false positives stemming from irrelevant changes in appearance. Furthermore, we propose a simple filtering strategy to mitigate the impact of label noise in CD datasets, contributing in an improved evaluation. We test 2Player on two very high resolution datasets: HRSCD, for which we improve and release a new, cleaner set of labels, as well as a new dataset, ValaisCD. Our approach achieves state-of-the-art performance among unsupervised methods on these datasets, and with its architecture-agnostic design, provides a promising direction for bridging the gap between supervised and unsupervised change detection.",
     "citation": "BIBTEX_CITATION_HERE",
     "isAccessibleForFree": true,
     "license": "https://creativecommons.org/licenses/by/4.0/",
     "mainEntity": {
       "@type": "WebPage",
-      "@id": "https://YOUR_DOMAIN.com/YOUR_PROJECT_PAGE"
+      "@id": "https://manonbechaz.github.io/2Player/E"
     },
     "about": [
       {
         "@type": "Thing",
-        "name": "RESEARCH_AREA_1"
+        "name": "Remote Sensing"
       },
       {
         "@type": "Thing", 
-        "name": "RESEARCH_AREA_2"
+        "name": "Change Detection"
+      }
+      {
+        "@type": "Thing", 
+        "name": "Self-Supervised"
       }
     ]
   }
@@ -193,12 +186,11 @@
   {
     "@context": "https://schema.org",
     "@type": "Organization",
-    "name": "INSTITUTION_OR_LAB_NAME",
-    "url": "https://YOUR_INSTITUTION_WEBSITE.com",
+    "name": "Environmental Computational Science and Earth Observation Laboratory",
+    "url": "https://www.epfl.ch/labs/eceo/",
     "logo": "https://YOUR_DOMAIN.com/static/images/favicon.ico",
     "sameAs": [
-      "https://twitter.com/YOUR_TWITTER_HANDLE",
-      "https://github.com/YOUR_GITHUB_USERNAME"
+      "https://github.com/manonbechaz"
     ]
   }
   </script>
@@ -275,7 +267,7 @@
 
                   <!-- TODO: Replace with your GitHub repository URL -->
                   <span class="link-block">
-                    <a href="https://github.com/manonbechaz/2Players" target="_blank"
+                    <a href="https://github.com/manonbechaz/2Player_code" target="_blank"
                     class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="fab fa-github"></i>
@@ -286,14 +278,14 @@
 
                 <!-- TODO: Update with your arXiv paper ID -->
                 <span class="link-block">
-                  <a href="https://arxiv.org/abs/<ARXIV PAPER ID>" target="_blank"
+                  <a href="https://huggingface.co/datasets/EPFL-ECEO/HRSCD_clean" target="_blank"
                   class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                     <img src="https://huggingface.co/front/assets/huggingface_logo-noborder.svg" alt="Hugging Face" width="20" height="20">
                   </span>
                   <span>Clean HRSCD</span>
                   <span class="link-block">
-                  <a href="https://arxiv.org/abs/<ARXIV PAPER ID>" target="_blank"
+                  <a href="https://huggingface.co/datasets/EPFL-ECEO/ValaisCD" target="_blank"
                   class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                     <img src="https://huggingface.co/front/assets/huggingface_logo-noborder.svg" alt="Hugging Face" width="20" height="20">
