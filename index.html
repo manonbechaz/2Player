@@ -157,7 +157,21 @@
     "image": "https://manonbechaz.github.io/2Player/static/images/2Players_schema.svg",
     "keywords": ["Change Detection", "Remote Sensing", "Cooperative Learning", "Very High Resolution Imagery", "Self-Supervised Learning"],
     "abstract": "While recent progress in deep learning have improved change detection (CD) in remote sensing, achieving high performance without labeled data remains an open challenge. Current models remain strongly reliant on large-scale annotated datasets, limiting their scalability to new regions and applications. Unsupervised CD methods offer a promising alternative but often suffer from limited representational ability and vulnerability to irrelevant changes in appearance such as seasonal variations. In this work, we propose the 2Player framework, a novel self-supervised method that transforms any existing CD architecture into an unsupervised model by leveraging a cooperation between a change detector and a reconstruction-based model. The two models, or players, guide each other during training: reconstruction errors provide supervision to the change detector, while change predictions guide the reconstruction process.  To further improve robustness, we introduce a Geographical Correspondence Module that provides high-frequency structural information, effectively reducing false positives stemming from irrelevant changes in appearance. Furthermore, we propose a simple filtering strategy to mitigate the impact of label noise in CD datasets, contributing in an improved evaluation. We test 2Player on two very high resolution datasets: HRSCD, for which we improve and release a new, cleaner set of labels, as well as a new dataset, ValaisCD. Our approach achieves state-of-the-art performance among unsupervised methods on these datasets, and with its architecture-agnostic design, provides a promising direction for bridging the gap between supervised and unsupervised change detection.",
-    "citation": "BIBTEX_CITATION_HERE",
+    "citation": "
+@article{bechaz_2player_2026,
+	title = {{2Player}: {A} general framework for self-supervised change detection via cooperative learning},
+	volume = {232},
+	issn = {0924-2716},
+	url = {https://www.sciencedirect.com/science/article/pii/S0924271625004630},
+	doi = {https://doi.org/10.1016/j.isprsjprs.2025.11.024},
+	abstract = {While recent progress in deep learning have improved change detection (CD) in remote sensing, achieving high performance without labeled data remains an open challenge. Current models remain strongly reliant on large-scale annotated datasets, limiting their scalability to new regions and applications. Unsupervised CD methods offer a promising alternative but often suffer from limited representational ability and vulnerability to irrelevant changes in appearance such as seasonal variations. In this work, we propose the 2Player framework, a novel self-supervised method that transforms any existing CD architecture into an unsupervised model by leveraging a cooperation between a change detector and a reconstruction-based model. The two models, or players, guide each other during training: reconstruction errors provide supervision to the change detector, while change predictions guide the reconstruction process. To further improve robustness, we introduce a Geographical Correspondence Module that provides high-frequency structural information, effectively reducing false positives stemming from irrelevant changes in appearance. Furthermore, we propose a simple filtering strategy to mitigate the impact of label noise in CD datasets, contributing in an improved evaluation. We test 2Player on four very high-resolution datasets: HRSCD, for which we improve and release a new, cleaner set of labels, LEVIR-CD, WHU-CD, as well as a new dataset, ValaisCD. Our approach achieves state-of-the-art performance among unsupervised methods on these datasets, and with its architecture-agnostic design, provides a promising direction for bridging the gap between supervised and unsupervised change detection.},
+	journal = {ISPRS Journal of Photogrammetry and Remote Sensing},
+	author = {Béchaz, Manon and Dalsasso, Emanuele and Tomoiagă, Ciprian and Detyniecki, Marcin and Tuia, Devis},
+	year = {2026},
+	keywords = {Change detection, Cooperative learning, Self-supervised learning, Very high-resolution imagery},
+	pages = {34--47},
+}
+",
     "isAccessibleForFree": true,
     "license": "https://creativecommons.org/licenses/by/4.0/",
     "mainEntity": {
@@ -630,12 +644,20 @@ mislabeled or noisy examples which hinder the learning process.
       <div class="bibtex-header">
         <h2 class="title">BibTeX</h2>
       </div>
-      <pre id="bibtex-code"><code>@article{YourPaperKey2024,
-  title={Your Paper Title Here},
-  author={First Author and Second Author and Third Author},
-  journal={Conference/Journal Name},
-  year={2024},
-  url={https://your-domain.com/your-project-page}
+      <pre id="bibtex-code"><code>
+@article{bechaz_2player_2026,
+	title = {{2Player}: {A} general framework for self-supervised change detection via cooperative learning},
+	volume = {232},
+	issn = {0924-2716},
+	url = {https://www.sciencedirect.com/science/article/pii/S0924271625004630},
+	doi = {https://doi.org/10.1016/j.isprsjprs.2025.11.024},
+	journal = {ISPRS Journal of Photogrammetry and Remote Sensing},
+	author = {Béchaz, Manon and Dalsasso, Emanuele and Tomoiagă, Ciprian and Detyniecki, Marcin and Tuia, Devis},
+	year = {2026},
+	keywords = {Change detection, Cooperative learning, Self-supervised learning, Very high-resolution imagery},
+	pages = {34--47},
+}
+
 }</code></pre>
 <pre id="bibtex-code"><code>@inproceedings{bechaz2025self,
   title={Self-supervised Change Detection via Cooperative Learning: A Two-Player Model},
